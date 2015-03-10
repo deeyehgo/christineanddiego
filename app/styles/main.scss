@@ -17,11 +17,24 @@ body {
   // padding-bottom: 20px;
 }
 
+.header {
+  position: fixed;
+  z-index: 1;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .container {
   width: 100%;
 }
 
 .section {
+  position: relative;
   color: white;
 
   a {
@@ -29,8 +42,36 @@ body {
   }
 }
 
+.section-header {
+  background: url(../images/christineanddiego.jpg) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+}
+
+.hero-header {
+  background: url(../images/wedding-header.png) no-repeat center center;
+  background-size: contain;
+  width: 319px;
+  height: 143px;
+}
+
 .section-wedding {
+
   background-color: #4a4a4a;
+}
+
+.wedding-header {
+  background: url(../images/date.png) no-repeat center center;
+  background-size: contain;
+  width: 160px;
+  height: 168px;
+}
+
+.rsvp-header {
+  background: url(../images/rsvp-header.png) no-repeat center center;
+  background-size: contain;
+  width: 240px;
+  height: 208px;
 }
 
 .section-rsvp {
