@@ -9,28 +9,29 @@
     y: '-100px'
   });
 
-  var headerTxtTween = TweenMax.fromTo($('.hero-header', {
+  // var headerTxtTween = TweenMax.fromTo($('.hero-header', {
 
-  }, {
+  // }, {
 
-  });
+  // });
 
   var headerTimeline = new TimelineMax();
-  headerTimeline.add({
+  headerTimeline.add([
     headerBgTween,
-    headerTxtTween
-  });
-  var headerScene = new ScrollMagic({
-      duration: $('.')
-    })
-    .setTween(headerTimeline)
-    .addTo(controller);
+    // headerTxtTween
+  ]);
+  // var headerScene = new ScrollMagic({
+  //     duration: $('.')
+  //   })
+  //   .setTween(headerTimeline)
+  //   .addTo(controller);
 
 
   function handleResize() {
     $('.section').css( {
       'width': $(window).width(),
-      'height': $(window).height()
+      // 'height': $(window).height(),
+      'min-height': $(window).height()
     });
 
   }

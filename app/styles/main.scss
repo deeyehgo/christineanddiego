@@ -1,8 +1,62 @@
 $icon-font-path: '../fonts/';
+$pink: #FFE4DB;
+$blue: #1E2863;
+
+$form-input-bg: $pink;
+$form-send-bg: $blue;
+  
+@font-face {
+  font-family: 'Ultramagnetic';
+  src: url('../fonts/ultramagnetic/ultramagnetic-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ultramagnetic/ultramagnetic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ultramagnetic/ultramagnetic-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ultramagnetic/ultramagnetic-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ultramagnetic/ultramagnetic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ultramagnetic/ultramagnetic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 // bower:scss
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
+// 
+@import "form";
+
+*:focus {
+  outline: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #46487b;
+  font-family:"Apercu Regular", Calibri, sans-serif;
+  font-size-adjust: 0.508;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Ultramagnetic', sans-serif;
+  font-size: 20px;
+}
+
+.u-caps {
+  text-transform: uppercase;
+}
+
+.u-center-text {
+  text-align: center;
+}
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -17,9 +71,10 @@ body {
   // padding-bottom: 20px;
 }
 
-.header {
-  position: fixed;
-  z-index: 1;
+.star {
+  background: url(../images/star.png) no-repeat center center / contain;
+  width: 25px;
+  height: 32px;
 }
 
 .center {
@@ -36,6 +91,7 @@ body {
 .section {
   position: relative;
   color: white;
+  height: auto;
 
   a {
     color: white;
@@ -49,7 +105,7 @@ body {
 }
 
 .hero-header {
-  background: url(../images/wedding-header.png) no-repeat center center;
+  background: url(../images/diegoandchristine-header.png) no-repeat center center;
   background-size: contain;
   width: 319px;
   height: 143px;
@@ -61,17 +117,17 @@ body {
 }
 
 .wedding-header {
-  background: url(../images/date.png) no-repeat center center;
+  background: url(../images/wedding-header.png) no-repeat center center;
   background-size: contain;
-  width: 160px;
-  height: 168px;
+  width: 283px;
+  height: 78px;
 }
 
 .rsvp-header {
   background: url(../images/rsvp-header.png) no-repeat center center;
   background-size: contain;
-  width: 240px;
-  height: 208px;
+  width: 145px;
+  height: 75px;
 }
 
 .section-rsvp {

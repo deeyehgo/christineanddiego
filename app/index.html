@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#46487b">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <title>christinediegosite</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -11,6 +12,9 @@
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Inconsolata|Roboto' rel='stylesheet' type='text/css'>
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -25,14 +29,15 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   
+    <div class="header">
+      <ul class="nav pull-left">
+        <li class="active"><a href="#">Wedding</a></li>
+        <li><a href="#">RSVP</a></li>
+        <li><a href="#">Registry</a></li>
+      </ul>
+    </div>
     <div class="container">
-      <div class="header">
-        <ul class="nav pull-left">
-          <li class="active"><a href="#">Wedding</a></li>
-          <li><a href="#">RSVP</a></li>
-          <li><a href="#">Registry</a></li>
-        </ul>
-      </div>
+      
 
       <div class="row section section-header">
         <div class="">
@@ -41,17 +46,43 @@
       </div>
 
       <div class="row section section-wedding">
-        <div class="col-xs-6 center">
+        <div class="center-col">
+        <div class="col-sm-8 col-sm-push-2 u-center-text">
 
+          <div class="wedding-header center-block"></div>
+          
+          <div class="wedding-container">
+            <p>April 6th, 2015</p>
+          </div>
 
-          <div class="wedding-header"></div>
-          <p>2128 Folsom St</p>
-          <p>San Francisco</p>
-  
-          <p>Ceremony 5PM</p>
-          <p>Cock tail reception and party to follow</p>
+          <div class="wedding-container">
+            <h2 class="u-caps">Stable Cafe</h2>
+            <p>2128 Folsom St.</p>
+            <p>San Francisco</p>
+          </div>
 
-          <p>- Cocktail Attire -</p>
+          <div class="wedding-container">
+            <h2>Stable Cafe</h2>
+            <p>2128 Folsom St.</p>
+            <p>San Francisco</p>
+          </div>
+
+          <div class="wedding-container">
+            <h2><span class="u-caps">Ceremony</span> at 5PM</h2>
+            <p>Cocktail reception and party to follow</p>
+            <p>- Cocktail attire -</p>
+          </div>
+
+          <div class="wedding-container">
+            <h2 class="u-caps">How to get there</h2>
+            <p>Stable Cafe is on Folsom st between 17th St. and 18th St. in Mission District.</p>
+            <p>Get a car: Use Lyft or Lyft Line (carpool.)</p>
+            <p>Bus: Bus 12 runs on Folsom st, get off at 17th st stop.</p>
+            <p>BART: Get off at 16th st and Mission st then walk for 10 min.</p>
+            <p>Drive: Parking can be found at impark on 17th &amp; Folsom St.</p>
+          </div>
+
+        </div>
         </div>
       </div>
 
@@ -61,12 +92,46 @@
 
           <div class="rsvp-header"></div>
           <p>Kindly respond by March 15th 2015</p>
-          <form action="">
-            <div>
-              
-              <input type="text">
-            </div>
-          </form>
+          <div class="form-group">
+            <form accept-charset="utf-8" class="form save-the-date" id="form" action="https://formkeep.com/f/885397a7f955" method="POST" autocomplete="on">
+              <input type="hidden" name="utf8" value="✓">
+              <div class="save-the-date-container">
+                <div class="form-name">
+                  <label for="mailing_address_fullname">Name</label>
+                  <input class="form-control" id="mailing_address_fullname" maxlength="255" name="name" type="text" value="" autocomplete="name">
+                </div>
+                <div class="form-email">
+                  <label for="mailing_address_fullname">Email</label>
+                  <input class="form-control" id="mailing_address_fullname" maxlength="255" name="name" type="text" value="" autocomplete="name">
+                </div>
+                <div class="form-attending">
+                  <label for="mailing_address_country">Are you attending?</label>
+                  <div class="country-container">
+                    <span class="fa fa-caret-down fa-right"></span>
+                    <select class="country form-control" id="mailing_address_country" name="country" autocomplete="country">
+                      <option value="yes">Yes - I'll be there!</option>
+                      <option value="no">No - sorry I cannot attend.</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-additional">
+                  <label for="mailing_address_fullname">Who else is in your party?</label>
+                  <input class="form-control" id="mailing_address_fullname" maxlength="255" name="name" type="text" value="">
+                </div>
+                <div class="form-message">
+                  <label for="mailing_address_fullname">Message</label>
+                  <textarea class="form-control" rows="5" id="mailing_address_fullname" maxlength="255" name="name" type="text" value=""></textarea>
+                </div>
+                <div class="btn-wrapper">
+                  <button type="submit" class="btn btn-default btn-lg">
+                    <div class="send-text"></div>
+                    <div class="sending-text"></div>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="sending-miimii"></div>
+          </div>
         </div>
       </div>
 
@@ -77,6 +142,20 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript">
+    WebFontConfig = { fontdeck: { id: '54515' } };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
