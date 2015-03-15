@@ -180,7 +180,7 @@ label {
 }
 
 .save-the-date {
-  width: 400px;
+  // width: 400px;
 
   @media (max-width: 454px) {
     width: 100%;
@@ -189,10 +189,11 @@ label {
 }
 
 .save-the-date-container {
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, 0);
-  width: 400px;
+  // left: 50%;
+  // position: absolute;
+  // transform: translate(-50%, 0);
+  // width: 400px;
+  margin: 0 auto;
 
   @media (max-width: 454px) {
     position: relative;

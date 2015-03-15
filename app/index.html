@@ -23,6 +23,20 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript">
+    WebFontConfig = { fontdeck: { id: '54515' } };
+
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+    </script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -40,7 +54,12 @@
       
 
       <div class="row section section-header">
-        <div class="">
+        <div class="hug">
+          <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
           <div class="hero-header center"></div>
         </div>
       </div>
@@ -48,7 +67,7 @@
       <div class="row section section-wedding">
         <div class="center-col">
         <div class="col-sm-8 col-sm-push-2 u-center-text">
-
+          
           <div class="wedding-header center-block"></div>
           
           <div class="wedding-container">
@@ -87,11 +106,11 @@
       </div>
 
       <div class="row section section-rsvp">
-        <div class="col-lg-6">
+        <div class="col-sm-6 col-sm-push-3">
 
 
-          <div class="rsvp-header"></div>
-          <p>Kindly respond by March 15th 2015</p>
+          <div class="rsvp-header center-block"></div>
+          <p class="u-center-text">Kindly respond by March 15th 2015</p>
           <div class="form-group">
             <form accept-charset="utf-8" class="form save-the-date" id="form" action="https://formkeep.com/f/885397a7f955" method="POST" autocomplete="on">
               <input type="hidden" name="utf8" value="✓">
@@ -136,26 +155,13 @@
       </div>
 
       <div class="row section section-registry">
-        <div class="col-lg-6">
+        <div class="col-sm-6 col-sm-push-3">
+          <div class="registry-header center-block"></div>
           <h1>Give us monies</h1>
           <p><a href="https://tendr.com/diegoandchristine/">https://tendr.com/diegoandchristine/</a></p>
         </div>
       </div>
     </div>
-
-    <script type="text/javascript">
-    WebFontConfig = { fontdeck: { id: '54515' } };
-
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
-    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

@@ -117,17 +117,21 @@ body {
 }
 
 .wedding-header {
-  background: url(../images/wedding-header.png) no-repeat center center;
-  background-size: contain;
+  background: url(../images/wedding-header.png) no-repeat center center / contain;
   width: 283px;
   height: 78px;
 }
 
 .rsvp-header {
-  background: url(../images/rsvp-header.png) no-repeat center center;
-  background-size: contain;
+  background: url(../images/rsvp-header.png) no-repeat center center / contain;
   width: 145px;
   height: 75px;
+}
+
+.registry-header {
+  background: url(../images/registry-header.png) no-repeat center center / contain;
+  width: 272px;
+  height: 92px;
 }
 
 .section-rsvp {
