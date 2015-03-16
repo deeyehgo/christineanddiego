@@ -55,33 +55,38 @@
 
       <div class="row section section-header">
         <div class="hug">
-          <div class="stars">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
+          <div class="hero-header center">
+            <div class="stars">
+              <div class="star"></div>
+              <div class="star"></div>
+              <div class="star"></div>
+            </div>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="circles">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
           </div>
-          <div class="hero-header center"></div>
         </div>
       </div>
 
       <div class="row section section-wedding">
         <div class="center-col">
-        <div class="col-sm-8 col-sm-push-2 u-center-text">
+        <div class="col-sm-12 u-center-text">
           
           <div class="wedding-header center-block"></div>
           
-          <div class="wedding-container">
+          <div class="wedding-container wedding-container-date">
             <p>April 6th, 2015</p>
           </div>
 
-          <div class="wedding-container">
+          <div class="wedding-container address">
             <h2 class="u-caps">Stable Cafe</h2>
-            <p>2128 Folsom St.</p>
-            <p>San Francisco</p>
-          </div>
-
-          <div class="wedding-container">
-            <h2>Stable Cafe</h2>
             <p>2128 Folsom St.</p>
             <p>San Francisco</p>
           </div>
@@ -89,7 +94,7 @@
           <div class="wedding-container">
             <h2><span class="u-caps">Ceremony</span> at 5PM</h2>
             <p>Cocktail reception and party to follow</p>
-            <p>- Cocktail attire -</p>
+            <p class="cocktail-copy">- Cocktail attire -</p>
           </div>
 
           <div class="wedding-container">
@@ -110,7 +115,7 @@
 
 
           <div class="rsvp-header center-block"></div>
-          <p class="u-center-text">Kindly respond by March 15th 2015</p>
+          <p class="u-center-text rsvp-copy">Kindly respond by March 15th 2015</p>
           <div class="form-group">
             <form accept-charset="utf-8" class="form save-the-date" id="form" action="https://formkeep.com/f/885397a7f955" method="POST" autocomplete="on">
               <input type="hidden" name="utf8" value="✓">
@@ -143,8 +148,8 @@
                 </div>
                 <div class="btn-wrapper">
                   <button type="submit" class="btn btn-default btn-lg">
-                    <div class="send-text"></div>
-                    <div class="sending-text"></div>
+                    <div class="send-text">Submit</div>
+                    <div class="sending-text">Sending</div>
                   </button>
                 </div>
               </div>
@@ -155,10 +160,12 @@
       </div>
 
       <div class="row section section-registry">
-        <div class="col-sm-6 col-sm-push-3">
+        <div class="col-sm-12">
           <div class="registry-header center-block"></div>
-          <h1>Give us monies</h1>
-          <p><a href="https://tendr.com/diegoandchristine/">https://tendr.com/diegoandchristine/</a></p>
+          <div class="wedding-container">
+            <p>If you would like to gift us, we’re registered at Tendr.</p>
+            <p><a href="https://tendr.com/diegoandchristine/" target="_blank">https://tendr.com/diegoandchristine/</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -178,6 +185,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

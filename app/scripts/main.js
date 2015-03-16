@@ -5,8 +5,8 @@
   $(window).trigger('resize');
 
   var controller = new ScrollMagic.Controller();
-  var headerBgTween = TweenMax.to($('hero-bg'), {
-    y: '-100px'
+  var headerBgTween = TweenMax.to('.hero-header', {
+    y: '-1000px'
   });
 
   // var headerTxtTween = TweenMax.fromTo($('.hero-header', {
@@ -20,11 +20,12 @@
     headerBgTween,
     // headerTxtTween
   ]);
-  // var headerScene = new ScrollMagic({
-  //     duration: $('.')
-  //   })
-  //   .setTween(headerTimeline)
-  //   .addTo(controller);
+  var headerScene = new ScrollMagic.Scene({
+    triggerElement: '.section-header',
+    duration: 400
+  })
+  .setTween(headerBgTween)
+  .addTo(controller);
 
 
   function handleResize() {
@@ -32,6 +33,10 @@
       'width': $(window).width(),
       // 'height': $(window).height(),
       'min-height': $(window).height()
+    });
+
+    $('.section-registry').css({
+      'min-height': 450
     });
 
   }

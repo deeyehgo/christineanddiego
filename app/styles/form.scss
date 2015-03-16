@@ -18,6 +18,7 @@ select,
 .form-control {
   height: 32px;
   border-radius: 2px;
+  margin-bottom: 21px;
 }
 
 input[type=text] {
@@ -35,10 +36,13 @@ select {
 
 label {
   display: block;
-  color: white;
   font-weight: 100;
   text-transform: uppercase;
-  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  font-family: Courier;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 19px;
+  margin-bottom: 8px;
 }
 
 .form-control {
@@ -287,7 +291,7 @@ label {
 }
 
 .btn {
-  background-color: rgba(46, 58, 118, 1);
+  background-color: #4d5798;
   border: 0;
   border-radius: 2px;
   color: white;
@@ -301,6 +305,12 @@ label {
   text-transform: uppercase;
   transform: translate(-50%, 0);
   width: 140px;
+  font-family: Ultramagnetic;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 2.99px;
+  line-height: 24px;
+  text-align: center;
   -webkit-appearance: none;
 
   @media (max-width: 454px) {
@@ -330,10 +340,8 @@ label {
   background-image: url(../images/sendButton.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 15px;
-  width: 44px;
   margin: 0 auto;
-
+  text-align: center;
 
   // &.is-sending {
   //   display: block;
@@ -348,8 +356,7 @@ label {
   background-image: url(../images/sendingButton.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 15px;
-  width: 74px;
+  text-align: center;
   margin: 0 auto;
   animation-name: pulse;
   animation-duration: 1s;

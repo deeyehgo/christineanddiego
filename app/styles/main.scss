@@ -48,6 +48,10 @@ body {
 h2 {
   font-family: 'Ultramagnetic', sans-serif;
   font-size: 20px;
+  letter-spacing: 3px;
+  line-height: 29px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .u-caps {
@@ -71,10 +75,95 @@ body {
   // padding-bottom: 20px;
 }
 
+p {
+  font-family: Apercu-Regular;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+}
+.stars {
+  position: absolute;
+  top: -232px;
+  left: -161px;
+}
+
 .star {
   background: url(../images/star.png) no-repeat center center / contain;
   width: 25px;
   height: 32px;
+  position: absolute;
+
+  &:nth-child(1) {
+    top: 251px;
+    left: 48px;
+  }
+
+  &:nth-child(2) {
+    top: 114px;
+    left: 324px;
+  }
+
+  &:nth-child(3) {
+    top: 375px;
+    left: 477px;
+  }
+}
+
+.dots {
+  position: absolute;
+  top: -232px;
+  left: -161px;
+}
+
+.dot {
+  background: url(../images/dot.png) no-repeat center center / contain;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+
+  &:nth-child(1) {
+    top: 331px;
+    left: 132px;
+  }
+
+  &:nth-child(2) {
+    top: 391px;
+    left: 350px;
+  }
+
+  &:nth-child(3) {
+    top: 159px;
+    left: 463px;
+  }
+}
+
+.circles {
+  position: absolute;
+  top: -232px;
+  left: -161px;
+}
+
+.circle {
+  background: url(../images/circle.png) no-repeat center center / contain;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  
+  &:nth-child(1) {
+    top: 448px;
+    left: 155px;
+  }
+
+  &:nth-child(2) {
+    top: 189px;
+    left: 212px;
+  }
+
+  &:nth-child(3) {
+    top: 274px;
+    left: 567px;
+  }
 }
 
 .center {
@@ -92,6 +181,7 @@ body {
   position: relative;
   color: white;
   height: auto;
+  padding-top: 80px;
 
   a {
     color: white;
@@ -113,25 +203,69 @@ body {
 
 .section-wedding {
 
-  background-color: #4a4a4a;
+  background-color: #434f66;
+}
+
+.wedding-container {
+  margin-bottom: 80px;
+
+  p {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  .cocktail-copy {
+    font-family: Apercu-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+    line-height: 17px;
+  }
+}
+
+
+.wedding-container-date {
+  margin-bottom: 74px;
+}
+
+.address {
+  font-family: Apercu-Regular;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.44px;
+  line-height: 22px;
+  p {
+    margin-bottom: 0.44px;
+  }
 }
 
 .wedding-header {
   background: url(../images/wedding-header.png) no-repeat center center / contain;
   width: 283px;
   height: 78px;
+  margin-bottom: 67px;
 }
 
 .rsvp-header {
   background: url(../images/rsvp-header.png) no-repeat center center / contain;
   width: 145px;
   height: 75px;
+  margin-bottom: 60px;
+}
+
+.rsvp-copy {
+  margin-bottom: 49px;
 }
 
 .registry-header {
   background: url(../images/registry-header.png) no-repeat center center / contain;
   width: 272px;
   height: 92px;
+  margin-bottom: 60px;
 }
 
 .section-rsvp {
