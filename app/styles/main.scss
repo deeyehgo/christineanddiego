@@ -82,6 +82,22 @@ p {
   letter-spacing: 0.5px;
   line-height: 22px;
 }
+
+.nav-header {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: Ultramagnetic;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  line-height: 26px;
+  text-transform: uppercase;
+  padding-top: 27px;
+  padding-left: 27px;
+}
+
 .stars {
   position: absolute;
   top: -232px;
@@ -93,21 +109,21 @@ p {
   width: 25px;
   height: 32px;
   position: absolute;
+}
 
-  &:nth-child(1) {
-    top: 251px;
-    left: 48px;
-  }
+.star-0 {
+  top: 251px;
+  left: 48px;
+}
 
-  &:nth-child(2) {
-    top: 114px;
-    left: 324px;
-  }
+.star-1 {
+  top: 114px;
+  left: 324px;
+}
 
-  &:nth-child(3) {
-    top: 375px;
-    left: 477px;
-  }
+.star-2 {
+  top: 375px;
+  left: 477px;
 }
 
 .dots {
@@ -121,21 +137,21 @@ p {
   width: 8px;
   height: 8px;
   position: absolute;
+}
 
-  &:nth-child(1) {
-    top: 331px;
-    left: 132px;
-  }
+.dot-0 {
+  top: 331px;
+  left: 132px;
+}
 
-  &:nth-child(2) {
-    top: 391px;
-    left: 350px;
-  }
+.dot-1 {
+  top: 391px;
+  left: 350px;
+}
 
-  &:nth-child(3) {
-    top: 159px;
-    left: 463px;
-  }
+.dot-2 {
+  top: 159px;
+  left: 463px;
 }
 
 .circles {
@@ -149,21 +165,21 @@ p {
   width: 16px;
   height: 16px;
   position: absolute;
-  
-  &:nth-child(1) {
-    top: 448px;
-    left: 155px;
-  }
+}
 
-  &:nth-child(2) {
-    top: 189px;
-    left: 212px;
-  }
+.circle-0 {
+  top: 448px;
+  left: 155px;
+}
 
-  &:nth-child(3) {
-    top: 274px;
-    left: 567px;
-  }
+.circle-1 {
+  top: 189px;
+  left: 212px;
+}
+
+.circle-2 {
+  top: 274px;
+  left: 567px;
 }
 
 .center {
@@ -181,7 +197,11 @@ p {
   position: relative;
   color: white;
   height: auto;
-  padding-top: 80px;
+
+  &:not(:first-of-type) {
+    padding-top: 80px;
+    
+  }
 
   a {
     color: white;
@@ -189,6 +209,11 @@ p {
 }
 
 .section-header {
+  width: 100%;
+  height: 100%;
+}
+
+.section-header-bg {
   background: url(../images/christineanddiego.jpg) no-repeat center center;
   background-size: cover;
   width: 100%;
@@ -199,6 +224,7 @@ p {
   background-size: contain;
   width: 319px;
   height: 143px;
+  z-index: 3;
 }
 
 .section-wedding {

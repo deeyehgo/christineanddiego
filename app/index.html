@@ -42,40 +42,38 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  
-    <div class="header">
-      <ul class="nav pull-left">
-        <li class="active"><a href="#">Wedding</a></li>
-        <li><a href="#">RSVP</a></li>
-        <li><a href="#">Registry</a></li>
-      </ul>
-    </div>
     <div class="container">
-      
-
-      <div class="row section section-header">
+      <div id="header-trigger" class="row section section-header">
         <div class="hug">
           <div class="hero-header center">
             <div class="stars">
-              <div class="star"></div>
-              <div class="star"></div>
-              <div class="star"></div>
+              <div class="star star-0"></div>
+              <div class="circle circle-1"></div>
+              <div class="dot dot-1"></div>
             </div>
             <div class="dots">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
+              <div class="star star-1"></div>
+              <div class="circle circle-0"></div>
+              <div class="dot dot-2"></div>
             </div>
             <div class="circles">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
+              <div class="star star-2"></div>
+              <div class="circle circle-2"></div>
+              <div class="dot dot-0"></div>
             </div>
           </div>
         </div>
+        <div class="section-header-bg"></div>
       </div>
 
       <div class="row section section-wedding">
+        <div class="nav-header">
+          <ul class="nav pull-left">
+            <li class="active"><a href="#">Wedding</a></li>
+            <li><a href="#">RSVP</a></li>
+            <li><a href="#">Registry</a></li>
+          </ul>
+        </div>
         <div class="center-col">
         <div class="col-sm-12 u-center-text">
           
@@ -186,6 +184,7 @@
     <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+    <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

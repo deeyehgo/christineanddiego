@@ -118,9 +118,9 @@ label {
 }
 
 .container {
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, 0);
+  // left: 50%;
+  // position: absolute;
+  // transform: translate(-50%, 0);
   z-index: 2;
 
   @media (max-width: 454px) {
