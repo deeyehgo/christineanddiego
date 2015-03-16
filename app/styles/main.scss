@@ -197,6 +197,7 @@ p {
   position: relative;
   color: white;
   height: auto;
+  overflow: hidden;
 
   &:not(:first-of-type) {
     padding-top: 80px;
@@ -214,7 +215,7 @@ p {
 }
 
 .section-header-bg {
-  background: url(../images/christineanddiego.jpg) no-repeat center center;
+  background: url(../images/christineanddiego.jpg) no-repeat center top fixed;
   background-size: cover;
   width: 100%;
 }
@@ -300,4 +301,9 @@ p {
 
 .section-registry  {
   background-color: #4d5798;
+}
+
+.nav > li > a:hover {
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 4px;
 }

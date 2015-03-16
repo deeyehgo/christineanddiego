@@ -61,6 +61,27 @@
   .setTween(TweenMax.to('.section-header-bg', 1, {y: '200' }))
   .addTo(controller);
 
+  controller.scrollTo(function (newpos) {
+    console.log(newpos);
+    TweenMax.to(window, 1, {scrollTo: {y: newpos}, ease: Expo.easeOut});
+  });
+
+  //  bind scroll to anchor links
+  $(document).on("click", "a[href^=#]", function (e) {
+    var id = $(this).attr("href");
+    if ($(id).length > 0) {
+      e.preventDefault();
+
+      // trigger scroll
+      controller.scrollTo(id);
+
+        // if supported by the browser we can even update the URL.
+      if (window.history && window.history.pushState) {
+        history.pushState("", document.title, id);
+      }
+    }
+  });
+
   function handleResize() {
     $('.section').css( {
       'width': $(window).width(),
