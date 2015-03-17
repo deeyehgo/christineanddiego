@@ -145,58 +145,7 @@ label {
   }
 }
 
-.save-the-date-num {
-  display: inline-block;
-  width: 286px;
-  height: 154px;
-  margin: 0 30px;
-
-  @media (max-width: 800px) {
-    margin: 30px auto;
-    width: 60%;
-    height: auto;
-    display: block;
-  }
-}
-
-.save-the-date-copy {
-  display: inline-block;
-  height: 15px;
-  width: 136px !important;
-
-  @media (max-width: 800px) {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-  }
-}
-
-.save-the-date-name {
-  display: inline-block;
-  height: 15px;
-  width: 175px !important;
-
-  @media (max-width: 800px) {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-  }
-}
-
-.save-the-date {
-  // width: 400px;
-
-  @media (max-width: 454px) {
-    width: 100%;
-    padding: 0 10px;
-  }
-}
-
-.save-the-date-container {
-  // left: 50%;
-  // position: absolute;
-  // transform: translate(-50%, 0);
-  // width: 400px;
+.rsvp-container {
   margin: 0 auto;
 
   @media (max-width: 454px) {
@@ -296,14 +245,11 @@ label {
   border-radius: 2px;
   color: white;
   cursor: pointer;
+  display: block;
   height: 40px;
-  left: 50%;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin: 80px auto 0;
   outline: 0;
-  position: absolute;
   text-transform: uppercase;
-  transform: translate(-50%, 0);
   width: 140px;
   font-family: Ultramagnetic;
   font-size: 16px;
@@ -337,25 +283,11 @@ label {
 }
 
 .send-text {
-  background-image: url(../images/sendButton.png);
-  background-repeat: no-repeat;
-  background-size: contain;
   margin: 0 auto;
   text-align: center;
-
-  // &.is-sending {
-  //   display: block;
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%); 
-  // }
 }
 
 .sending-text {
-  background-image: url(../images/sendingButton.png);
-  background-repeat: no-repeat;
-  background-size: contain;
   text-align: center;
   margin: 0 auto;
   animation-name: pulse;
@@ -406,9 +338,6 @@ label {
 }
 
 .thankYou {
-  background-image: url(../images/thankyoutext.png);
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 145px;
   height: 15px;
   position: absolute;
@@ -423,9 +352,6 @@ label {
 }
 
 .errorMsg {
-  background-image: url(../images/errortext.png);
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 253px;
   height: 45px;
   position: absolute;

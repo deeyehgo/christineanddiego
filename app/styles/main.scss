@@ -9,7 +9,6 @@ $form-send-bg: $blue;
   font-family: 'Ultramagnetic';
   src: url('../fonts/ultramagnetic/ultramagnetic-webfont.eot'); /* IE9 Compat Modes */
   src: url('../fonts/ultramagnetic/ultramagnetic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/ultramagnetic/ultramagnetic-webfont.woff2') format('woff2'), /* Super Modern Browsers */
        url('../fonts/ultramagnetic/ultramagnetic-webfont.woff') format('woff'), /* Pretty Modern Browsers */
        url('../fonts/ultramagnetic/ultramagnetic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('../fonts/ultramagnetic/ultramagnetic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
@@ -36,7 +35,7 @@ html {
 }
 
 body {
-  background-color: #46487b;
+  background-color: #fd877a;
   font-family:"Apercu Regular", Calibri, sans-serif;
   font-size-adjust: 0.508;
   font-size: 18px;
@@ -54,12 +53,26 @@ h2 {
   text-align: center;
 }
 
+.required {
+  color: #85f9c6;
+}
+
 .u-caps {
   text-transform: uppercase;
 }
 
 .u-center-text {
   text-align: center;
+}
+
+.u-mw-400 {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.u-z-1 {
+  position: relative;
+  z-index: 1;
 }
 
 .browserupgrade {
@@ -182,6 +195,34 @@ p {
   left: 567px;
 }
 
+.pluses {
+  position: absolute;
+  top: -232px;
+  left: -161px;
+}
+
+.plus {
+  background: url(../images/plus.png) no-repeat center center / contain;
+  width: 18px;
+  height: 21px;
+  position: absolute;
+}
+
+.plus-0 {
+  top: 448px;
+  left: 155px;
+}
+
+.plus-1 {
+  top: 189px;
+  left: 212px;
+}
+
+.plus-2 {
+  top: 274px;
+  left: 567px;
+}
+
 .center {
   position: absolute;
   top: 50%;
@@ -200,13 +241,13 @@ p {
   overflow: hidden;
 
   &:not(:first-of-type) {
-    padding-top: 80px;
+    padding: 80px 0;
     
   }
 
   a {
     color: white;
-  }
+  } 
 }
 
 .section-header {
@@ -215,7 +256,7 @@ p {
 }
 
 .section-header-bg {
-  background: url(../images/christineanddiego.jpg) no-repeat center top fixed;
+  background: url(../images/christineanddiego.jpg) no-repeat center top;
   background-size: cover;
   width: 100%;
 }
@@ -229,8 +270,25 @@ p {
 }
 
 .section-wedding {
-
   background-color: #434f66;
+}
+
+.left-confetti {
+  background: url(../images/left-confetti.png) no-repeat left center / contain;
+  position: absolute;
+  width: 203px;
+  height: 866px;
+  z-index: 0;
+  left: 6%;
+}
+
+.right-confetti {
+  background: url(../images/right-confetti.png) no-repeat right center / contain;
+  position: absolute;
+  width: 203px;
+  height: 866px;
+  z-index: 0;
+  right: 6%;
 }
 
 .wedding-container {
@@ -295,15 +353,66 @@ p {
   margin-bottom: 60px;
 }
 
+.rsvp-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.rsvp-bg {
+  position: absolute;
+  z-index: 1;
+}
+
+.rsvp-bg-tl {
+  background: url(../images/rsvp-bg-tl.png) no-repeat top left / contain;
+  // width: 723px;
+  width: 100%;
+  height: 302px;
+  top: -51px;
+}
+
+.rsvp-bg-tr {
+  background: url(../images/rsvp-bg-tr.png) no-repeat top right / contain;
+  // width: 754px;
+  width: 100%;
+  height: 316px;
+  top: -26px;
+  right: 0;
+}
+
+.rsvp-bg-br {
+  background: url(../images/rsvp-bg-br.png) no-repeat bottom right / contain;
+  width: 900px;
+  height: 380px;
+  bottom: -7px;
+  right: 0;
+}
+
+.rsvp-bg-bl {
+  background: url(../images/rsvp-bg-bl.png) no-repeat bottom left / contain;
+  width: 1037px;
+  height: 277px;
+  bottom: -12px;
+}
+
+.rsvp-bg-bm {
+  background: url(../images/rsvp-bg-bm.png) no-repeat bottom center / contain;
+  width: 923px;
+  height: 124px;
+  bottom: -9px;
+  right: -5%;
+}
+
 .section-rsvp {
   background-color: #878390;
+  overflow: hidden;
 }
 
 .section-registry  {
   background-color: #4d5798;
 }
 
-.nav > li > a:hover {
-  background-color: rgba(0, 0, 0, .1);
-  border-radius: 4px;
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
 }
