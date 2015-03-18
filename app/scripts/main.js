@@ -62,7 +62,6 @@
     duration: $(document).height() - $('.section-header').height()
   })
   .setPin('.nav-header')
-  .setTween(TweenMax.to('.section-header-bg', 1, {y: '200' }))
   .addTo(controller);
 
   controller.scrollTo(function (newpos) {
