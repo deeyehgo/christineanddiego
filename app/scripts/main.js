@@ -39,7 +39,7 @@
 
   var controller = new ScrollMagic.Controller();
 
-  if(!isMobile.any) {
+  if(!isMobile.any || $(window).width() < 736) {
     // Hero header
     new ScrollMagic.Scene({
     triggerElement: '#header-trigger',
@@ -110,6 +110,51 @@
       duration: $(document).height() - $('.section-header').height()
     })
     .setPin('.nav-header')
+    .addTo(controller);
+
+    // nav-header
+    new ScrollMagic.Scene({
+    triggerElement: '.section-wedding',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.rsvp-bg-tl', 1, {y: -100 }, {y: 30 }))
+    .addTo(controller);
+
+    // nav-header
+    new ScrollMagic.Scene({
+    triggerElement: '.section-wedding',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.rsvp-bg-tr', 1, {y: -190 }, {y: 20 }))
+    .addTo(controller);
+
+    // nav-header
+    new ScrollMagic.Scene({
+    triggerElement: '.section-wedding',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.rsvp-bg-bl', 1, {y: -40 }, {y: 190 }))
+    .addTo(controller);
+
+    // nav-header
+    new ScrollMagic.Scene({
+    triggerElement: '.section-wedding',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.rsvp-bg-br', 1, {y: -40 }, {y: 200 }))
+    .addTo(controller);
+
+    // nav-header
+    new ScrollMagic.Scene({
+    triggerElement: '.section-rsvp',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.rsvp-bg-bm', 1, {y: -40 }, {y: 210 }))
     .addTo(controller);
 
   }
