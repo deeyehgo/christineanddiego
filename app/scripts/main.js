@@ -4,91 +4,79 @@
   var data = {};
   var address;
   var isFormSubmit = false;
+  var yOffset = 0;
 
   $(window).resize(handleResize);
   $(window).trigger('resize');
 
   var controller = new ScrollMagic.Controller();
 
-  // Hero header
-  new ScrollMagic.Scene({
-  triggerElement: '#header-trigger',
-    triggerHook: 'onLeave',
-    duration: $('.section-header').height()
-  })
-  .setTween(TweenMax.to('.hero-header', 1, {y: '40%' }))
-  .addTo(controller);
+  if(!isMobile.any) {
+    // Hero header
+    new ScrollMagic.Scene({
+    triggerElement: '#header-trigger',
+      triggerHook: 'onLeave',
+      duration: $('.section-header').height()
+    })
+    .setTween(TweenMax.to('.hero-header', 1, {y: '40%' }))
+    .addTo(controller);
 
-  // Stars
-  new ScrollMagic.Scene({
-  triggerElement: '#header-trigger',
-    triggerHook: 'onLeave',
-    duration: $('.section-header').height()
-  })
-  .setTween(TweenMax.to('.stars', 1, {y: '-7' }))
-  .addTo(controller);
+    // Stars
+    new ScrollMagic.Scene({
+    triggerElement: '#header-trigger',
+      triggerHook: 'onLeave',
+      duration: $('.section-header').height()
+    })
+    .setTween(TweenMax.to('.stars', 1, {y: '-7' }))
+    .addTo(controller);
 
-  // Circles
-  new ScrollMagic.Scene({
-  triggerElement: '#header-trigger',
-    triggerHook: 'onLeave',
-    duration: $('.section-header').height()
-  })
-  .setTween(TweenMax.to('.circles', 1, {y: '-15' }))
-  .addTo(controller);
+    // Circles
+    new ScrollMagic.Scene({
+    triggerElement: '#header-trigger',
+      triggerHook: 'onLeave',
+      duration: $('.section-header').height()
+    })
+    .setTween(TweenMax.to('.circles', 1, {y: '-15' }))
+    .addTo(controller);
 
-  // Dots
-  new ScrollMagic.Scene({
-  triggerElement: '#header-trigger',
-    triggerHook: 'onLeave',
-    duration: $('.section-header').height()
-  })
-  .setTween(TweenMax.to('.dots', 1, {y: '-20' }))
-  .addTo(controller);
+    // Dots
+    new ScrollMagic.Scene({
+    triggerElement: '#header-trigger',
+      triggerHook: 'onLeave',
+      duration: $('.section-header').height()
+    })
+    .setTween(TweenMax.to('.dots', 1, {y: '-20' }))
+    .addTo(controller);
 
-  // bg
-  new ScrollMagic.Scene({
-  triggerElement: '#header-trigger',
-    triggerHook: 'onLeave',
-    duration: $('.section-header').height()
-  })
-  .setTween(TweenMax.to('.section-header-bg', 1, {y: '200' }))
-  .addTo(controller);
+    // bg
+    new ScrollMagic.Scene({
+    triggerElement: '#header-trigger',
+      triggerHook: 'onLeave',
+      duration: $('.section-header').height()
+    })
+    .setTween(TweenMax.to('.section-header-bg', 1, {y: '200' }))
+    .addTo(controller);
 
-  // nav-header
-  new ScrollMagic.Scene({
-  triggerElement: '.section-wedding',
-    triggerHook: 'onLeave',
-    duration: $(document).height() - $('.section-header').height()
-  })
-  .setPin('.nav-header')
-  .addTo(controller);
+    // confetti-left
+    new ScrollMagic.Scene({
+    triggerElement: '.section-header',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.left-confetti', 1, {y: '-20%' }, {y: '40%' }))
+    .addTo(controller);
 
-  controller.scrollTo(function (newpos) {
-    console.log(newpos);
-    TweenMax.to(window, 1, {scrollTo: {y: newpos}, ease: Expo.easeOut});
-  });
-
-  // confetti-left
-  new ScrollMagic.Scene({
-  triggerElement: '.section-header',
-    triggerHook: 'onLeave',
-    duration: $(document).height()
-  })
-  .setTween(TweenMax.fromTo('.left-confetti', 1, {y: '-20%' }, {y: '40%' }))
-  .addTo(controller);
-
-  // confetti-right
-  new ScrollMagic.Scene({
-  triggerElement: '.section-header',
-    triggerHook: 'onLeave',
-    duration: $(document).height()
-  })
-  .setTween(TweenMax.fromTo('.right-confetti', 1, {y: '-20%' }, {y: '40%' }))
-  .addTo(controller);
+    // confetti-right
+    new ScrollMagic.Scene({
+    triggerElement: '.section-header',
+      triggerHook: 'onLeave',
+      duration: $(document).height()
+    })
+    .setTween(TweenMax.fromTo('.right-confetti', 1, {y: '-20%' }, {y: '40%' }))
+    .addTo(controller);
+  }
 
   controller.scrollTo(function (newpos) {
-    console.log(newpos);
     TweenMax.to(window, 1, {scrollTo: {y: newpos}, ease: Expo.easeOut});
   });
 
@@ -98,6 +86,11 @@
     if ($(id).length > 0) {
       e.preventDefault();
 
+      if(id === "#registry") {
+        yOffset = $(document).height() - $('.section-registry').offset().top
+      } else {
+        yOffset = 0;
+      }
       // trigger scroll
       controller.scrollTo(id);
 
@@ -145,11 +138,13 @@
       TweenMax.to($('.form-email'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
       TweenMax.to($('.form-attending'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
       TweenMax.to($('.form-party'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
+      TweenMax.to($('.form-message'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
       TweenMax.to($('.sending-miimii'), 1, {autoAlpha: 1, ease: Expo.easeInOut, delay: .35}),
       TweenMax.to($('.btn'), 1, {y: -$('.rsvp-container').height() + $('.sending-miimii').height() - 20, backgroundColor: 'rgba(46, 58, 118, 0)', outline: 'none', ease: Expo.easeInOut, delay: .3}),
-      TweenMax.to($(window), 1, {scrollTo: {y: 0}, ease: Expo.easeOut, delay: .5})
+      TweenMax.to($(window), 1, {scrollTo: {y: $('.section-rsvp').offset().top }, ease: Expo.easeOut, delay: .5}),
+      TweenMax.to($('.section-rsvp'), 1, {css: {'height': 470, 'min-height': 470}, ease: Expo.easeOut, delay: .5})
     ], 0, 'sequence', -tt + .05).play();
-
+    console.log($('.section-rsvp').offset().top);
     $('.btn').addClass('disable');
   }
 
@@ -159,8 +154,10 @@
       url: $('.rsvp').attr('action'),
       data: {
         'name': data.name,
-        'address': address,
-        'country': data.country
+        'email': data.email,
+        'attending': data.attending,
+        'party': data.party,
+        'message': data.message
       },
       accepts: 'application/javascript',
       type: 'POST',
@@ -176,6 +173,8 @@
         }
       }
     });
+
+    // hideForm(200);
   }
 
   function hideForm(statusCode) {
@@ -247,13 +246,16 @@
 
   function errorForm() {
     TweenMax.fromTo($('.confirmation-container'), 2, {autoAlpha: 0}, {autoAlpha: 1, delay: timelineOut.duration() - .2});
-
   }
 
   function handleResize() {
     $('.section').css( {
       'width': $(window).width(),
       'min-height': $(window).height()
+    });
+
+    $('.section-rsvp').css({
+      'min-height': isFormSubmit ? 470 : $(window).height()
     });
 
     $('.section-registry').css({
@@ -272,8 +274,5 @@
     $('.rsvp-bg-tl, .rsvp-bg-tr').css({
       'height': 324 * ($(window).width() / $('.rsvp-bg-tl').width())
     });
-
-    console.log($(window).width() / $('.rsvp-bg-tl').width(), $('.rsvp-bg-tl').width());
-
   }
 }());

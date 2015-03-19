@@ -42,6 +42,7 @@ body {
   font-weight: normal;
   font-style: normal;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 h2 {
@@ -109,6 +110,40 @@ p {
   text-transform: uppercase;
   padding-top: 27px;
   padding-left: 27px;
+  @media (max-width: 736px) {
+    background-color: rgba(67, 79, 102, .7);
+    padding: 0;
+    position: fixed;
+    font-size: 13px;
+    width: 100%;
+    // left: 50%;
+    // transform: translate(-50%);
+    // display: flex;
+    // justify-content: space-between;
+  }
+}
+
+.nav {
+  @media (max-width: 736px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.nav > li {
+  @media (max-width: 736px) {
+    // display: inline-block;
+    padding: 0;
+  }
+
+  a {
+    @media (max-width: 736px) {
+      padding: 0;
+      margin-top: 2px;
+    }
+  }
 }
 
 .stars {
@@ -125,13 +160,13 @@ p {
 }
 
 .star-0 {
-  top: 251px;
-  left: 48px;
+  top: 267px;
+  left: 40px;
 }
 
 .star-1 {
   top: 114px;
-  left: 324px;
+  left: 353px;
 }
 
 .star-2 {
@@ -153,18 +188,18 @@ p {
 }
 
 .dot-0 {
-  top: 331px;
-  left: 132px;
+  top: 332px;
+  left: 129px;
 }
 
 .dot-1 {
   top: 391px;
-  left: 350px;
+  left: 361px;
 }
 
 .dot-2 {
   top: 159px;
-  left: 463px;
+  left: 460px;
 }
 
 .circles {
@@ -181,18 +216,18 @@ p {
 }
 
 .circle-0 {
-  top: 448px;
-  left: 155px;
+  top: 435px;
+  left: 128px;
 }
 
 .circle-1 {
-  top: 189px;
-  left: 212px;
+  top: 200px;
+  left: 210px;
 }
 
 .circle-2 {
-  top: 274px;
-  left: 567px;
+  top: 275px;
+  left: 564px;
 }
 
 .pluses {
@@ -209,18 +244,18 @@ p {
 }
 
 .plus-0 {
-  top: 448px;
-  left: 155px;
+  top: 440px;
+  left: 312px;
 }
 
 .plus-1 {
-  top: 189px;
-  left: 212px;
+  top: 186px;
+  left: 128px;
 }
 
 .plus-2 {
-  top: 274px;
-  left: 567px;
+  top: 232px;
+  left: 522px;
 }
 
 .center {
@@ -259,6 +294,7 @@ p {
   background: url(../images/christineanddiego.jpg) no-repeat center top;
   background-size: cover;
   width: 100%;
+  will-change: transform;
 }
 
 .hero-header {
@@ -280,6 +316,7 @@ p {
   height: 866px;
   z-index: 0;
   left: 6%;
+  top: 100px;
 }
 
 .right-confetti {
@@ -289,6 +326,7 @@ p {
   height: 866px;
   z-index: 0;
   right: 6%;
+  top: 100px;
 }
 
 .wedding-container {
@@ -384,7 +422,7 @@ p {
   background: url(../images/rsvp-bg-br.png) no-repeat bottom right / contain;
   width: 900px;
   height: 380px;
-  bottom: -7px;
+  bottom: -17px;
   right: 0;
 }
 
@@ -392,15 +430,15 @@ p {
   background: url(../images/rsvp-bg-bl.png) no-repeat bottom left / contain;
   width: 1037px;
   height: 277px;
-  bottom: -12px;
+  bottom: -22px;
 }
 
 .rsvp-bg-bm {
-  background: url(../images/rsvp-bg-bm.png) no-repeat bottom center / contain;
+  background: url(../images/rsvp-bg-bm.png) no-repeat bottom right / contain;
   width: 923px;
   height: 124px;
   bottom: -9px;
-  right: -5%;
+  right: 0%;
 }
 
 .section-rsvp {

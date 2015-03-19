@@ -30,11 +30,11 @@ input[type=text] {
   }
 }
 
-select {
+select, {
   background-color: $form-input-bg;
 }
 
-label {
+label, .required-copy {
   display: block;
   font-weight: 100;
   text-transform: uppercase;
@@ -43,6 +43,11 @@ label {
   color: #FFFFFF;
   line-height: 19px;
   margin-bottom: 8px;
+}
+
+.fa-caret-down {
+  color: #434f66;
+  pointer-events: none;
 }
 
 .form-control {
