@@ -317,6 +317,10 @@ p {
   z-index: 0;
   left: 6%;
   top: 100px;
+
+  @media (max-width: 736px) {
+    opacity: 0.6;
+  }
 }
 
 .right-confetti {
@@ -327,6 +331,10 @@ p {
   z-index: 0;
   right: 6%;
   top: 100px;
+
+  @media (max-width: 736px) {
+    opacity: 0.6;
+  }
 }
 
 .wedding-container {

@@ -102,6 +102,16 @@
     })
     .setTween(TweenMax.fromTo('.right-confetti', 1, {y: '-20%' }, {y: '40%' }))
     .addTo(controller);
+
+    // nav-header
+    new ScrollMagic.Scene({
+    triggerElement: '.section-wedding',
+      triggerHook: 'onLeave',
+      duration: $(document).height() - $('.section-header').height()
+    })
+    .setPin('.nav-header')
+    .addTo(controller);
+
   }
 
   controller.scrollTo(function (newpos) {
