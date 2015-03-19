@@ -15,5 +15,13 @@
   "undef": true,
   "unused": true,
   "strict": true,
-  "jquery": true
+  "jquery": true,
+  "globals": {
+    "ScrollMagic": true,
+    "TweenMax": true,
+    "isMobile": true,
+    "Expo": true,
+    "TimelineMax": true,
+    "Elastic": true
+  }
 }

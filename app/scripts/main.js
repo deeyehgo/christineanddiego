@@ -1,10 +1,38 @@
 /* jshint devel:true */
+'use strict';
 
 (function() {
   var data = {};
-  var address;
   var isFormSubmit = false;
   var yOffset = 0;
+
+  function handleResize() {
+    $('.section').css( {
+      'width': $(window).width(),
+      'min-height': $(window).height()
+    });
+
+    $('.section-rsvp').css({
+      'min-height': isFormSubmit ? 470 : $(window).height()
+    });
+
+    $('.section-registry').css({
+      'min-height': 450
+    });
+
+    $('.section-header-bg').css({
+      'width': $(window).width(),
+      'height': $(window).height()
+    });
+
+    $('.left-confetti, .right-confetti').css({
+      'height': $(window).height()
+    });
+
+    $('.rsvp-bg-tl, .rsvp-bg-tr').css({
+      'height': 324 * ($(window).width() / $('.rsvp-bg-tl').width())
+    });
+  }
 
   $(window).resize(handleResize);
   $(window).trigger('resize');
@@ -81,13 +109,13 @@
   });
 
   //  bind scroll to anchor links
-  $(document).on("click", "a[href^=#]", function (e) {
-    var id = $(this).attr("href");
+  $(document).on('click', 'a[href^=#]', function (e) {
+    var id = $(this).attr('href');
     if ($(id).length > 0) {
       e.preventDefault();
 
-      if(id === "#registry") {
-        yOffset = $(document).height() - $('.section-registry').offset().top
+      if(id === '#registry') {
+        yOffset = $(document).height() - $('.section-registry').offset().top;
       } else {
         yOffset = 0;
       }
@@ -96,7 +124,7 @@
 
         // if supported by the browser we can even update the URL.
       if (window.history && window.history.pushState) {
-        history.pushState("", document.title, id);
+        history.pushState('', document.title, id);
       }
     }
   });
@@ -111,7 +139,7 @@
   });
 
   function postToForm() {
-    if(validateForm() == false) {
+    if(validateForm() === false) {
       return;
     }
 
@@ -134,16 +162,16 @@
 
     var tt = 1.2;
     timeline.add([
-      TweenMax.to($('.form-name'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
-      TweenMax.to($('.form-email'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
-      TweenMax.to($('.form-attending'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
-      TweenMax.to($('.form-party'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
-      TweenMax.to($('.form-message'), tt, {x: "+=100px", autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, .7]}),
-      TweenMax.to($('.sending-miimii'), 1, {autoAlpha: 1, ease: Expo.easeInOut, delay: .35}),
-      TweenMax.to($('.btn'), 1, {y: -$('.rsvp-container').height() + $('.sending-miimii').height() - 20, backgroundColor: 'rgba(46, 58, 118, 0)', outline: 'none', ease: Expo.easeInOut, delay: .3}),
-      TweenMax.to($(window), 1, {scrollTo: {y: $('.section-rsvp').offset().top }, ease: Expo.easeOut, delay: .5}),
-      TweenMax.to($('.section-rsvp'), 1, {css: {'height': 470, 'min-height': 470}, ease: Expo.easeOut, delay: .5})
-    ], 0, 'sequence', -tt + .05).play();
+      TweenMax.to($('.form-name'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
+      TweenMax.to($('.form-email'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
+      TweenMax.to($('.form-attending'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
+      TweenMax.to($('.form-party'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
+      TweenMax.to($('.form-message'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
+      TweenMax.to($('.sending-miimii'), 1, {autoAlpha: 1, ease: Expo.easeInOut, delay: 0.35}),
+      TweenMax.to($('.btn'), 1, {y: -$('.rsvp-container').height() + $('.sending-miimii').height() - 20, backgroundColor: 'rgba(46, 58, 118, 0)', outline: 'none', ease: Expo.easeInOut, delay: 0.3}),
+      TweenMax.to($(window), 1, {scrollTo: {y: $('.section-rsvp').offset().top }, ease: Expo.easeOut, delay: 0.5}),
+      TweenMax.to($('.section-rsvp'), 1, {css: {'height': 470, 'min-height': 470}, ease: Expo.easeOut, delay: 0.5})
+    ], 0, 'sequence', -tt + 0.05).play();
     console.log($('.section-rsvp').offset().top);
     $('.btn').addClass('disable');
   }
@@ -178,17 +206,17 @@
   }
 
   function hideForm(statusCode) {
-    var ttOut = .3;
-    var timelineOut = new TimelineMax({
-      onComplete: function() {
-        $('.form-group').css({
-          'display': 'none'
-        });
+    var ttOut = 0.3;
+    // var timelineOut = new TimelineMax({
+    //   onComplete: function() {
+    //     $('.form-group').css({
+    //       'display': 'none'
+    //     });
 
-        bg.style.height = ch;
-        decoration.style.height = ch;
-      }
-    });
+    //     bg.style.height = ch;
+    //     decoration.style.height = ch;
+    //   }
+    // });
 
     $('input').blur();
     TweenMax.to($('.btn'), ttOut, {autoAlpha: 0});
@@ -196,11 +224,11 @@
     switch(statusCode) {
       case 200:
       case 0:
-        TweenMax.fromTo($('.confirmation-container'), ttOut + .7, {autoAlpha: 0, y: '+= 12', x: '-50%'}, {autoAlpha: 1, y: 0, x: '-50%', delay: ttOut - .2, ease: Expo.easeOut});
+        TweenMax.fromTo($('.confirmation-container'), ttOut + 0.7, {autoAlpha: 0, y: '+= 12', x: '-50%'}, {autoAlpha: 1, y: 0, x: '-50%', delay: ttOut - 0.2, ease: Expo.easeOut});
         break;
       case 404:
       case 406:
-        TweenMax.fromTo($('.submit-error-container'), ttOut + .7, {autoAlpha: 0, y: '+= 12', x: '-50%'}, {autoAlpha: 1, y: 0, x: '-50%', delay: ttOut - .2, ease: Expo.easeOut});
+        TweenMax.fromTo($('.submit-error-container'), ttOut + 0.7, {autoAlpha: 0, y: '+= 12', x: '-50%'}, {autoAlpha: 1, y: 0, x: '-50%', delay: ttOut - 0.2, ease: Expo.easeOut});
         break;
     }
   }
@@ -216,63 +244,37 @@
   }
 
   function error(selector) {
-    TweenMax.to(window, .2, {
+    TweenMax.to(window, 0.2, {
       scrollTo: $(selector).offset().top - 50,
       ease: Expo.easeOut,
       onComplete: function() {
         var timeline = new TimelineMax();
         timeline.add([
-          TweenMax.to($(selector), .1, {x: 5, ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {x: -5, ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {x: 5, ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {x: -5, ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {x: 0, ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {x: -5, ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {x: 0, ease: Expo.easeOut})
+          TweenMax.to($(selector), 0.1, {x: 5, ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {x: -5, ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {x: 5, ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {x: -5, ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {x: 0, ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {x: -5, ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {x: 0, ease: Expo.easeOut})
         ], 0, 'sequence', 0).play();
 
         var pulse = new TimelineMax();
         pulse.add([
-          TweenMax.to($(selector), .1, {backgroundColor: '#f8c5c5', ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {backgroundColor: '#FFE4DB', ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {backgroundColor: '#f8c5c5', ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {backgroundColor: '#FFE4DB', ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {backgroundColor: '#f8c5c5', ease: Expo.easeOut}),
-          TweenMax.to($(selector), .1, {backgroundColor: '#FFE4DB', ease: Expo.easeOut})
+          TweenMax.to($(selector), 0.1, {backgroundColor: '#f8c5c5', ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {backgroundColor: '#FFE4DB', ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {backgroundColor: '#f8c5c5', ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {backgroundColor: '#FFE4DB', ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {backgroundColor: '#f8c5c5', ease: Expo.easeOut}),
+          TweenMax.to($(selector), 0.1, {backgroundColor: '#FFE4DB', ease: Expo.easeOut})
         ], 0, 'sequence', 0).play();
       }
     });
   }
 
-  function errorForm() {
-    TweenMax.fromTo($('.confirmation-container'), 2, {autoAlpha: 0}, {autoAlpha: 1, delay: timelineOut.duration() - .2});
-  }
+  // function errorForm() {
+  //   TweenMax.fromTo($('.confirmation-container'), 2, {autoAlpha: 0}, {autoAlpha: 1, delay: timelineOut.duration() - 0.2});
+  // }
 
-  function handleResize() {
-    $('.section').css( {
-      'width': $(window).width(),
-      'min-height': $(window).height()
-    });
-
-    $('.section-rsvp').css({
-      'min-height': isFormSubmit ? 470 : $(window).height()
-    });
-
-    $('.section-registry').css({
-      'min-height': 450
-    });
-
-    $('.section-header-bg').css({
-      'width': $(window).width(),
-      'height': $(window).height()
-    });
-
-    $('.left-confetti, .right-confetti').css({
-      'height': $(window).height()
-    });
-
-    $('.rsvp-bg-tl, .rsvp-bg-tr').css({
-      'height': 324 * ($(window).width() / $('.rsvp-bg-tl').width())
-    });
-  }
+  
 }());
