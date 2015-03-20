@@ -322,14 +322,14 @@ label, .required-copy {
   width: 181px;
   height: 130px;
   animation: jump .5s steps(2) infinite;
-  top: 220px;
+  top: 110px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
   opacity: 0;
 
   @media (max-width: 800px) {
-    top: 250px;
+    top: 110px;
   }
 }
 
@@ -346,13 +346,13 @@ label, .required-copy {
   width: 145px;
   height: 15px;
   position: absolute;
-  top: 160px;
+  top: 150px;
   left: 50%;
   transform: translateX(-50%);
 
   @media (max-width: 450px) {
     width: 154px;
-    top: 100px;
+    top: 130px;
   }
 }
 
@@ -360,7 +360,7 @@ label, .required-copy {
   width: 253px;
   height: 45px;
   position: absolute;
-  top: 160px;
+  top: 150px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -402,13 +402,13 @@ label, .required-copy {
   left: 50%;
   position: absolute;
   text-align: center;
-  top: 250px;
+  top: 140px;
   transform: translate(-50%, 0);
   visibility: hidden;
   z-index: 2;
 
   @media (max-width: 800px) {
-    top: 320px;
+    top: 140px;
   }
 
   h1 {

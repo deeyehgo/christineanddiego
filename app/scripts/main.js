@@ -5,6 +5,7 @@
   var data = {};
   var isFormSubmit = false;
   var yOffset = 0;
+  var controller = new ScrollMagic.Controller();
 
   function handleResize() {
     $('.section').css( {
@@ -17,12 +18,16 @@
     });
 
     $('.section-registry').css({
-      'min-height': 450
+      'min-height': 550
     });
 
     $('.section-header-bg').css({
       'width': $(window).width(),
       'height': $(window).height()
+    });
+
+    $('.registry-bg').css({
+      'width': $(window).width()
     });
 
     $('.left-confetti, .right-confetti').css({
@@ -37,10 +42,6 @@
   $(window).resize(handleResize);
   $(window).trigger('resize');
 
-  var controller = new ScrollMagic.Controller();
-
-  if(!isMobile.any || $(window).width() < 736) {
-    // Hero header
     new ScrollMagic.Scene({
     triggerElement: '#header-trigger',
       triggerHook: 'onLeave',
@@ -112,7 +113,6 @@
     .setPin('.nav-header')
     .addTo(controller);
 
-    // nav-header
     new ScrollMagic.Scene({
     triggerElement: '.section-wedding',
       triggerHook: 'onLeave',
@@ -121,7 +121,7 @@
     .setTween(TweenMax.fromTo('.rsvp-bg-tl', 1, {y: -100 }, {y: 30 }))
     .addTo(controller);
 
-    // nav-header
+    // rsvp-tr
     new ScrollMagic.Scene({
     triggerElement: '.section-wedding',
       triggerHook: 'onLeave',
@@ -130,34 +130,34 @@
     .setTween(TweenMax.fromTo('.rsvp-bg-tr', 1, {y: -190 }, {y: 20 }))
     .addTo(controller);
 
-    // nav-header
+    // rsvp-bl
     new ScrollMagic.Scene({
     triggerElement: '.section-wedding',
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.rsvp-bg-bl', 1, {y: -40 }, {y: 190 }))
+    .setTween(TweenMax.fromTo('.rsvp-bg-bl', 1, {y: -100 }, {y: 190 }))
     .addTo(controller);
 
-    // nav-header
+    // rsvp-br
     new ScrollMagic.Scene({
     triggerElement: '.section-wedding',
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.rsvp-bg-br', 1, {y: -40 }, {y: 200 }))
+    .setTween(TweenMax.fromTo('.rsvp-bg-br', 1, {y: -100 }, {y: 200 }))
     .addTo(controller);
 
-    // nav-header
+    // rsvp-bm
     new ScrollMagic.Scene({
-    triggerElement: '.section-rsvp',
+    triggerElement: '.section-wedding',
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.rsvp-bg-bm', 1, {y: -40 }, {y: 210 }))
+    .setTween(TweenMax.fromTo('.rsvp-bg-bm', 1, {y: -100 }, {y: 100 }))
     .addTo(controller);
 
-  }
+  // }
 
   controller.scrollTo(function (newpos) {
     TweenMax.to(window, 1, {scrollTo: {y: newpos}, ease: Expo.easeOut});

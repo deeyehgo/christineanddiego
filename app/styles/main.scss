@@ -4,6 +4,9 @@ $blue: #1E2863;
 
 $form-input-bg: $pink;
 $form-send-bg: $blue;
+$apercu: Apercu Regular, Calibri, sans-serif;
+
+$mobile-br: 736px;
   
 @font-face {
   font-family: 'Ultramagnetic';
@@ -35,8 +38,18 @@ html {
 }
 
 body {
-  background-color: #fd877a;
-  font-family:"Apercu Regular", Calibri, sans-serif;
+  // background-color: #fd877a;
+
+  background: #fd877a; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fd877a 0%, #fd877a 50%, #4d5798 50%, #4d5798 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fd877a), color-stop(50%,#fd877a), color-stop(50%,#4d5798), color-stop(100%,#4d5798)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd877a', endColorstr='#4d5798',GradientType=0 ); /* IE6-9 */
+
+  font-family: $apercu;
   font-size-adjust: 0.508;
   font-size: 18px;
   font-weight: normal;
@@ -52,6 +65,11 @@ h2 {
   line-height: 29px;
   text-transform: uppercase;
   text-align: center;
+}
+
+.fa-caret-down {
+  color: #878390;
+  top: 6px;
 }
 
 .required {
@@ -90,7 +108,7 @@ body {
 }
 
 p {
-  font-family: Apercu-Regular;
+  font-family: $apercu;
   font-size: 18px;
   color: #FFFFFF;
   letter-spacing: 0.5px;
@@ -110,21 +128,38 @@ p {
   text-transform: uppercase;
   padding-top: 27px;
   padding-left: 27px;
-  @media (max-width: 736px) {
+  @media (max-width: $mobile-br) {
+    display: none;
+  }
+}
+
+.nav-header-mobile {
+  display: none;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: Ultramagnetic;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  line-height: 26px;
+  text-transform: uppercase;
+  padding-top: 27px;
+  padding-left: 27px;
+
+  @media (max-width: $mobile-br) {
+    display: block;
     background-color: rgba(67, 79, 102, .7);
     padding: 0;
     position: fixed;
     font-size: 13px;
     width: 100%;
-    // left: 50%;
-    // transform: translate(-50%);
-    // display: flex;
-    // justify-content: space-between;
   }
 }
 
 .nav {
-  @media (max-width: 736px) {
+  @media (max-width: $mobile-br) {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -133,13 +168,13 @@ p {
 }
 
 .nav > li {
-  @media (max-width: 736px) {
+  @media (max-width: $mobile-br) {
     // display: inline-block;
     padding: 0;
   }
 
   a {
-    @media (max-width: 736px) {
+    @media (max-width: $mobile-br) {
       padding: 0;
       margin-top: 2px;
     }
@@ -267,6 +302,10 @@ p {
 
 .container {
   width: 100%;
+  @media (max-width: $mobile-br) {
+    position: relative;
+    top: 48px;
+  }
 }
 
 .section {
@@ -291,15 +330,13 @@ p {
 }
 
 .section-header-bg {
-  background: url(../images/christineanddiego.jpg) no-repeat center top;
-  background-size: cover;
+  background: url(../images/christineanddiego.jpg) no-repeat center top / cover;
   width: 100%;
   will-change: transform;
 }
 
 .hero-header {
-  background: url(../images/diegoandchristine-header.png) no-repeat center center;
-  background-size: contain;
+  background: url(../images/diegoandchristine-header.png) no-repeat center center / contain;
   width: 319px;
   height: 143px;
   z-index: 3;
@@ -316,9 +353,9 @@ p {
   height: 866px;
   z-index: 0;
   left: 6%;
-  top: 100px;
+  top: -70px;
 
-  @media (max-width: 736px) {
+  @media (max-width: $mobile-br) {
     opacity: 0.6;
   }
 }
@@ -330,9 +367,9 @@ p {
   height: 866px;
   z-index: 0;
   right: 6%;
-  top: 100px;
+  top: -20px;
 
-  @media (max-width: 736px) {
+  @media (max-width: $mobile-br) {
     opacity: 0.6;
   }
 }
@@ -350,7 +387,7 @@ p {
   }
 
   .cocktail-copy {
-    font-family: Apercu-Regular;
+    font-family: $apercu;
     font-size: 14px;
     color: #FFFFFF;
     letter-spacing: 0.5px;
@@ -364,7 +401,7 @@ p {
 }
 
 .address {
-  font-family: Apercu-Regular;
+  font-family: $apercu;
   font-size: 18px;
   color: #FFFFFF;
   letter-spacing: 0.44px;
@@ -392,11 +429,30 @@ p {
   margin-bottom: 49px;
 }
 
+.registry {
+  height: 550px;
+  min-height: 550px;
+}
+
 .registry-header {
   background: url(../images/registry-header.png) no-repeat center center / contain;
   width: 272px;
   height: 92px;
   margin-bottom: 60px;
+}
+
+.registry-content {
+  position: relative;
+  z-index: 2;
+}
+
+.registry-bg {
+  background: url(../images/registry-bg.jpg) no-repeat center bottom / cover;
+  width: 100%;
+  min-height: 550px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 
 .rsvp-wrap {
