@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="theme-color" content="#46487b">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <title>christinediegosite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Diego and Christine</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -45,27 +45,29 @@
     <div class="container">
       <div id="header-trigger" class="row section section-header">
         <div class="hug">
-          <div class="hero-header center">
-            <div class="stars">
-              <div class="star star-0"></div>
-              <div class="circle circle-1"></div>
-              <div class="dot dot-1"></div>
-            </div>
-            <div class="dots">
-              <div class="star star-1"></div>
-              <div class="plus plus-2"></div>
-              <div class="dot dot-2"></div>
-            </div>
-            <div class="circles">
-              <div class="star star-2"></div>
-              <div class="plus plus-0"></div>
-              <div class="dot dot-0"></div>
-            </div>
+          <div class="hero-header-container">
+            <div class="hero-header center">
+              <div class="stars">
+                <div class="star star-0"></div>
+                <div class="circle circle-1"></div>
+                <div class="dot dot-1"></div>
+              </div>
+              <div class="dots">
+                <div class="star star-1"></div>
+                <div class="plus plus-2"></div>
+                <div class="dot dot-2"></div>
+              </div>
+              <div class="circles">
+                <div class="star star-2"></div>
+                <div class="plus plus-0"></div>
+                <div class="dot dot-0"></div>
+              </div>
 
-            <div class="pluses">
-              <div class="circle circle-0"></div>
-              <div class="plus plus-1"></div>
-              <div class="circle circle-2"></div>
+              <div class="pluses">
+                <div class="circle circle-0"></div>
+                <div class="plus plus-1"></div>
+                <div class="circle circle-2"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -96,9 +98,11 @@
             </div>
 
             <div class="wedding-container address">
-              <h2 class="u-caps">Stable Cafe</h2>
-              <p>2128 Folsom St.</p>
-              <p>San Francisco</p>
+                <h2 class="u-caps">Stable Cafe</h2>
+                <a href="https://www.google.com/maps/place/Stable+Cafe/@37.763237,-122.415483,15z/data=!4m2!3m1!1s0x0:0x853feb5942aa54c7" target="_blank">
+                  <p>2128 Folsom St.</p>
+                  <p>San Francisco</p>
+                </a>
             </div>
 
             <div class="wedding-container">
@@ -126,22 +130,23 @@
           <div class="rsvp-header center-block"></div>
           <div class="form-group u-mw-400">
             <form accept-charset="utf-8" class="form rsvp" id="form" action="https://formkeep.com/f/885397a7f955" method="POST" autocomplete="on">
-              <p class="u-center-text rsvp-copy">Kindly respond by March 15th 2015</p>
+              <p class="u-center-text rsvp-copy">Kindly respond by March 24th 2015</p>
               <input type="hidden" name="utf8" value="✓">
               <div class="rsvp-container">
                 <div class="form-name">
                   <label for="rsvp_name">Name <span class="required">*</span></label>
-                  <input class="form-control" id="rsvp_name" tabindex="1" maxlength="255" name="name" type="text" value="" autocomplete="name" required>
+                  <input class="form-control" id="rsvp_name" tabindex="1" maxlength="255" name="name" type="text" value="" autocomplete="name">
                 </div>
                 <div class="form-email">
                   <label for="rsvp_email">Email <span class="required">*</span></label>
-                  <input class="form-control" id="rsvp_email" tabindex="2" maxlength="255" name="email" type="email" value="" autocomplete="email" required>
+                  <input class="form-control" id="rsvp_email" tabindex="2" maxlength="255" name="email" type="email" value="" autocomplete="email">
                 </div>
                 <div class="form-attending">
-                  <label for="rsvp_attending">Are you attending?</label>
+                  <label for="rsvp_attending">Are you attending? <span class="required">*</span></label>
                   <div class="country-container">
                     <span class="fa fa-caret-down fa-right"></span>
-                    <select class="country form-control" id="rsvp_attending" tabindex="3" name="attending" autocomplete="attending">
+                    <select class="country form-control form-attending-select" id="rsvp_attending" tabindex="3" name="attending" autocomplete="attending">
+                      <option value="na">- Select -</option>
                       <option value="yes">Yes - I'll be there!</option>
                       <option value="no">No - sorry I cannot attend.</option>
                     </select>
@@ -216,22 +221,13 @@
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
     <script src="/bower_components/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <script src="/bower_components/isMobile/isMobile.js"></script>
+    <script src="/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="/bower_components/waypoints/lib/shortcuts/sticky.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/plugins.js -->
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->

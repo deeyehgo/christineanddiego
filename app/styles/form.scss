@@ -43,6 +43,10 @@ label, .required-copy {
   color: #FFFFFF;
   line-height: 19px;
   margin-bottom: 8px;
+
+  @media (max-width: 736px) {
+    font-size: 14px;
+  }
 }
 
 .fa-caret-down {
@@ -264,6 +268,10 @@ label, .required-copy {
   text-align: center;
   -webkit-appearance: none;
 
+  @media (max-width: $mobile-br) {
+    transform: scale(0.9);
+  }
+
   @media (max-width: 454px) {
     height: 44px;
     margin-top: 40px;
@@ -288,7 +296,7 @@ label, .required-copy {
 }
 
 .send-text {
-  margin: 0 auto;
+  margin: 2px auto;
   text-align: center;
 }
 

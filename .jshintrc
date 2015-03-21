@@ -21,6 +21,8 @@
     "TweenMax": true,
     "isMobile": true,
     "Expo": true,
+    "Waypoint": true,
+    "Linear": true,
     "TimelineMax": true,
     "Elastic": true
   }

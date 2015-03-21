@@ -4,7 +4,7 @@ $blue: #1E2863;
 
 $form-input-bg: $pink;
 $form-send-bg: $blue;
-$apercu: Apercu Regular, Calibri, sans-serif;
+$apercu: "Apercu Regular", Calibri, sans-serif;
 
 $mobile-br: 736px;
   
@@ -37,17 +37,24 @@ html {
   box-sizing: inherit;
 }
 
-body {
+// html, body {
+//     width:      100%;
+//     height:     100%;
+//     overflow:   hidden;
+// }
+
+// body > div {
+//     height:     100%;
+//     overflow:   scroll;
+//     -webkit-overflow-scrolling: touch;
+// }
+
+html,body {
   // background-color: #fd877a;
 
   background: #fd877a; /* Old browsers */
-  background: -moz-linear-gradient(top,  #fd877a 0%, #fd877a 50%, #4d5798 50%, #4d5798 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fd877a), color-stop(50%,#fd877a), color-stop(50%,#4d5798), color-stop(100%,#4d5798)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #fd877a 0%,#fd877a 50%,#4d5798 50%,#4d5798 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd877a', endColorstr='#4d5798',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(to bottom,  #fd877a 0%,#fd877a 50%,#707bab 50%,#707bab 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd877a', endColorstr='#707bab',GradientType=0 ); /* IE6-9 */
 
   font-family: $apercu;
   font-size-adjust: 0.508;
@@ -56,6 +63,10 @@ body {
   font-style: normal;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+
+  @media (max-width: $mobile-br) {
+    font-size: 14px;      
+  }
 }
 
 h2 {
@@ -69,7 +80,7 @@ h2 {
 
 .fa-caret-down {
   color: #878390;
-  top: 6px;
+  top: 8px;
 }
 
 .required {
@@ -113,6 +124,16 @@ p {
   color: #FFFFFF;
   letter-spacing: 0.5px;
   line-height: 22px;
+
+  @media (max-width: $mobile-br) {
+    font-size: 14px;
+  }
+}
+
+.sticky-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .nav-header {
@@ -130,12 +151,18 @@ p {
   padding-left: 27px;
   @media (max-width: $mobile-br) {
     display: none;
+    font-size: 14px;
+  }
+
+  &.stuck {
+    position: fixed;
+    top: 0;
   }
 }
 
 .nav-header-mobile {
   display: none;
-  z-index: 3;
+  z-index: 99;
   position: absolute;
   top: 0;
   left: 0;
@@ -197,16 +224,35 @@ p {
 .star-0 {
   top: 267px;
   left: 40px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 267px;
+    left: 162px;
+  }
 }
 
 .star-1 {
   top: 114px;
   left: 353px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+
+    top: 184px;
+    left: 383px;
+  }
 }
 
 .star-2 {
   top: 375px;
   left: 477px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 335px;
+    left: 431px;
+  }
 }
 
 .dots {
@@ -225,16 +271,34 @@ p {
 .dot-0 {
   top: 332px;
   left: 129px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 332px;
+    left: 180px;
+  }
 }
 
 .dot-1 {
   top: 391px;
   left: 361px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 361px;
+    left: 376px;
+  }
 }
 
 .dot-2 {
   top: 159px;
   left: 460px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 219px;
+    left: 440px;
+  }
 }
 
 .circles {
@@ -253,16 +317,34 @@ p {
 .circle-0 {
   top: 435px;
   left: 128px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 385px;
+    left: 208px;
+  }
 }
 
 .circle-1 {
   top: 200px;
   left: 210px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 200px;
+    left: 210px;
+  }
 }
 
 .circle-2 {
   top: 275px;
   left: 564px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    top: 275px;
+    left: 444px;
+  }
 }
 
 .pluses {
@@ -281,16 +363,35 @@ p {
 .plus-0 {
   top: 440px;
   left: 312px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 80%;
+    top: 390px;
+    left: 312px;
+  }
 }
 
 .plus-1 {
-  top: 186px;
-  left: 128px;
+  top: 216px;
+  left: 94px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 80%;
+
+    top: 206px;
+    left: 284px;
+  }
 }
 
 .plus-2 {
   top: 232px;
   left: 522px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 80%;
+    top: 232px;
+    left: 452px;
+  }
 }
 
 .center {
@@ -317,6 +418,9 @@ p {
   &:not(:first-of-type) {
     padding: 80px 0;
     
+    @media (max-width: $mobile-br) {
+      padding: 60px 0;
+    }
   }
 
   a {
@@ -333,6 +437,10 @@ p {
   background: url(../images/christineanddiego.jpg) no-repeat center top / cover;
   width: 100%;
   will-change: transform;
+
+  @media (max-width: 700px) {
+    background-position: 28% top;
+  }
 }
 
 .hero-header {
@@ -340,6 +448,14 @@ p {
   width: 319px;
   height: 143px;
   z-index: 3;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;     
+  }
+}
+
+.hero-header-container {
+  // transform: scale(.5)
 }
 
 .section-wedding {
@@ -356,7 +472,11 @@ p {
   top: -70px;
 
   @media (max-width: $mobile-br) {
-    opacity: 0.6;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1440px) {
+    left: 9%;
   }
 }
 
@@ -370,12 +490,24 @@ p {
   top: -20px;
 
   @media (max-width: $mobile-br) {
-    opacity: 0.6;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1440px) {
+    right: 9%;
   }
 }
 
 .wedding-container {
   margin-bottom: 80px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: $mobile-br) {
+    margin-bottom: 60px;
+  }
 
   p {
     text-align: center;
@@ -398,6 +530,10 @@ p {
 
 .wedding-container-date {
   margin-bottom: 74px;
+
+  @media (max-width: $mobile-br) {
+    margin-bottom: 54px;
+  }
 }
 
 .address {
@@ -406,6 +542,14 @@ p {
   color: #FFFFFF;
   letter-spacing: 0.44px;
   line-height: 22px;
+  @media (max-width: $mobile-br) {
+    font-size: 14px;      
+  }
+
+  a {
+    // text-decoration: none;
+  }
+
   p {
     margin-bottom: 0.44px;
   }
@@ -416,22 +560,36 @@ p {
   width: 283px;
   height: 78px;
   margin-bottom: 67px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;
+    margin-bottom: 41px;     
+  }
 }
 
 .rsvp-header {
   background: url(../images/rsvp-header.png) no-repeat center center / contain;
   width: 145px;
   height: 75px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;     
+  }
 }
 
 .rsvp-copy {
   margin-bottom: 49px;
 }
 
-.registry {
-  height: 550px;
-  min-height: 550px;
+.section-registry {
+  height: 600px;
+  min-height: 600px;
+
+  @media (max-width: $mobile-br) {
+    min-height: 460px;
+    height: 460px;
+  }
 }
 
 .registry-header {
@@ -439,6 +597,11 @@ p {
   width: 272px;
   height: 92px;
   margin-bottom: 60px;
+
+  @media (max-width: $mobile-br) {
+    background-size: 70%;    
+    margin-bottom: 40px; 
+  }
 }
 
 .registry-content {
@@ -449,10 +612,15 @@ p {
 .registry-bg {
   background: url(../images/registry-bg.jpg) no-repeat center bottom / cover;
   width: 100%;
-  min-height: 550px;
+  min-height: 600px;
   position: absolute;
   bottom: 0;
   z-index: 1;
+
+  @media (max-width: $mobile-br) {
+    min-height: 310px;
+    background-position: center bottom 48px;
+  }
 }
 
 .rsvp-wrap {
@@ -466,7 +634,7 @@ p {
 }
 
 .rsvp-bg-tl {
-  background: url(../images/rsvp-bg-tl.png) no-repeat top left / contain;
+  background: url(../images/blob1.png) no-repeat top left / contain;
   // width: 723px;
   width: 100%;
   height: 302px;
@@ -474,7 +642,7 @@ p {
 }
 
 .rsvp-bg-tr {
-  background: url(../images/rsvp-bg-tr.png) no-repeat top right / contain;
+  background: url(../images/blob2.png) no-repeat top right / contain;
   // width: 754px;
   width: 100%;
   height: 316px;
@@ -483,22 +651,22 @@ p {
 }
 
 .rsvp-bg-br {
-  background: url(../images/rsvp-bg-br.png) no-repeat bottom right / contain;
+  background: url(../images/blob3.png) no-repeat bottom right / contain;
   width: 900px;
   height: 380px;
-  bottom: -17px;
+  bottom: -87px;
   right: 0;
 }
 
 .rsvp-bg-bl {
-  background: url(../images/rsvp-bg-bl.png) no-repeat bottom left / contain;
+  background: url(../images/blob5.png) no-repeat bottom left / contain;
   width: 1037px;
   height: 277px;
   bottom: -22px;
 }
 
 .rsvp-bg-bm {
-  background: url(../images/rsvp-bg-bm.png) no-repeat bottom right / contain;
+  background: url(../images/blob4.png) no-repeat bottom right / contain;
   width: 923px;
   height: 124px;
   bottom: -9px;
@@ -511,10 +679,17 @@ p {
 }
 
 .section-registry  {
-  background-color: #4d5798;
+  background-color: #707bab;
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
   background-color: transparent;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

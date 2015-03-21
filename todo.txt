@@ -1,0 +1,6 @@
+font: 2px smaller for all copy
+make image with 70%
+20 padding on left right side
+fix tendr link
+
+mobile check

@@ -18,7 +18,7 @@
     });
 
     $('.section-registry').css({
-      'min-height': 550
+      'min-height': $(window).width() > 736 ? 600 : 460
     });
 
     $('.section-header-bg').css({
@@ -47,7 +47,7 @@
       triggerHook: 'onLeave',
       duration: $('.section-header').height()
     })
-    .setTween(TweenMax.to('.hero-header', 1, {y: '40%' }))
+    .setTween(TweenMax.to('.hero-header', 1, {y: '40%', ease: Linear.easeNone}))
     .addTo(controller);
 
     // Stars
@@ -56,7 +56,7 @@
       triggerHook: 'onLeave',
       duration: $('.section-header').height()
     })
-    .setTween(TweenMax.to('.stars', 1, {y: '-7' }))
+    .setTween(TweenMax.to('.stars', 1, {y: '-7', ease: Linear.easeNone}))
     .addTo(controller);
 
     // Circles
@@ -65,7 +65,7 @@
       triggerHook: 'onLeave',
       duration: $('.section-header').height()
     })
-    .setTween(TweenMax.to('.circles', 1, {y: '-15' }))
+    .setTween(TweenMax.to('.circles', 1, {y: '-15', ease: Linear.easeNone}))
     .addTo(controller);
 
     // Dots
@@ -74,7 +74,7 @@
       triggerHook: 'onLeave',
       duration: $('.section-header').height()
     })
-    .setTween(TweenMax.to('.dots', 1, {y: '-20' }))
+    .setTween(TweenMax.to('.dots', 1, {y: '-20', ease: Linear.easeNone}))
     .addTo(controller);
 
     // bg
@@ -83,7 +83,7 @@
       triggerHook: 'onLeave',
       duration: $('.section-header').height()
     })
-    .setTween(TweenMax.to('.section-header-bg', 1, {y: '200' }))
+    .setTween(TweenMax.to('.section-header-bg', 1, {y: '200', ease: Linear.easeNone}))
     .addTo(controller);
 
     // confetti-left
@@ -92,7 +92,7 @@
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.left-confetti', 1, {y: '-20%' }, {y: '40%' }))
+    .setTween(TweenMax.fromTo('.left-confetti', 1, {y: '-20%' }, {y: '40%', ease: Linear.easeNone}))
     .addTo(controller);
 
     // confetti-right
@@ -101,61 +101,66 @@
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.right-confetti', 1, {y: '-20%' }, {y: '40%' }))
+    .setTween(TweenMax.fromTo('.right-confetti', 1, {y: '-20%' }, {y: '40%', ease: Linear.easeNone}))
     .addTo(controller);
 
     // nav-header
-    new ScrollMagic.Scene({
-    triggerElement: '.section-wedding',
-      triggerHook: 'onLeave',
-      duration: $(document).height() - $('.section-header').height()
-    })
-    .setPin('.nav-header')
-    .addTo(controller);
+    // new ScrollMagic.Scene({
+    // triggerElement: '.section-wedding',
+    //   triggerHook: 'onLeave',
+    //   duration: $(document).height() - $('.section-header').height()
+    // })
+    // .setPin('.nav-header')
+    // .addTo(controller);
 
-    new ScrollMagic.Scene({
-    triggerElement: '.section-wedding',
-      triggerHook: 'onLeave',
-      duration: $(document).height()
-    })
-    .setTween(TweenMax.fromTo('.rsvp-bg-tl', 1, {y: -100 }, {y: 30 }))
-    .addTo(controller);
+    new Waypoint.Sticky({
+      element: $('.nav-header')[0],
+      offset: 0
+    });
 
-    // rsvp-tr
-    new ScrollMagic.Scene({
-    triggerElement: '.section-wedding',
-      triggerHook: 'onLeave',
-      duration: $(document).height()
-    })
-    .setTween(TweenMax.fromTo('.rsvp-bg-tr', 1, {y: -190 }, {y: 20 }))
-    .addTo(controller);
+    // new ScrollMagic.Scene({
+    // triggerElement: '.section-rsvp',
+    //   triggerHook: 'onEnter',
+    //   duration: 20
+    // })
+    // .setTween(TweenMax.fromTo('.rsvp-bg-tl', 1, {y: 0 }, {y: -100 }))
+    // .addTo(controller);
 
-    // rsvp-bl
-    new ScrollMagic.Scene({
-    triggerElement: '.section-wedding',
-      triggerHook: 'onLeave',
-      duration: $(document).height()
-    })
-    .setTween(TweenMax.fromTo('.rsvp-bg-bl', 1, {y: -100 }, {y: 190 }))
-    .addTo(controller);
+    // // rsvp-tr
+    // new ScrollMagic.Scene({
+    // triggerElement: '.section-rsvp',
+    //   triggerHook: 'onEnter',
+    //   duration: $('.section-rsvp').height()
+    // })
+    // .setTween(TweenMax.fromTo('.rsvp-bg-tr', 1, {y: 0 }, {y: -100 }))
+    // .addTo(controller);
 
-    // rsvp-br
-    new ScrollMagic.Scene({
-    triggerElement: '.section-wedding',
-      triggerHook: 'onLeave',
-      duration: $(document).height()
-    })
-    .setTween(TweenMax.fromTo('.rsvp-bg-br', 1, {y: -100 }, {y: 200 }))
-    .addTo(controller);
+    // // rsvp-bl
+    // new ScrollMagic.Scene({
+    // triggerElement: '.section-rsvp',
+    //   triggerHook: 'onEnter',
+    //   duration: $('.section-rsvp').height()
+    // })
+    // .setTween(TweenMax.fromTo('.rsvp-bg-bl', 1, {y: 200 }, {y: 0 }))
+    // .addTo(controller);
 
-    // rsvp-bm
-    new ScrollMagic.Scene({
-    triggerElement: '.section-wedding',
-      triggerHook: 'onLeave',
-      duration: $(document).height()
-    })
-    .setTween(TweenMax.fromTo('.rsvp-bg-bm', 1, {y: -100 }, {y: 100 }))
-    .addTo(controller);
+    // // rsvp-br
+    // new ScrollMagic.Scene({
+    // triggerElement: '.section-rsvp',
+    //   triggerHook: 'onEnter',
+    //   duration: $('.section-rsvp').height()
+    // })
+    // .setTween(TweenMax.fromTo('.rsvp-bg-br', 1, {y: 200 }, {y: 0 }))
+    // .addTo(controller);
+
+    // // rsvp-bm
+    // new ScrollMagic.Scene({
+    // triggerElement: '.section-rsvp',
+    //   triggerHook: 'onEnter',
+    //   duration: $('.section-rsvp').height()
+    // })
+    // .setTween(TweenMax.fromTo('.rsvp-bg-bm', 1, {y: 200 }, {y: 0 }))
+    // .addTo(controller);
 
   // }
 
@@ -204,12 +209,14 @@
     isFormSubmit = true;
 
     data = {
-      name: $('#name').val(),
-      email: $('#email').val(),
-      attending: $('#attending').val(),
-      party: $('#party').val(),
-      message: $('#message').val(),
+      name: $('#rsvp_name').val(),
+      email: $('#rsvp_email').val(),
+      attending: $('#rsvp_attending').val(),
+      party: $('#rsvp_party').val(),
+      message: $('#rsvp_message').val(),
     };
+
+    console.log(data);
 
     var timeline = new TimelineMax({
       onComplete: sendForm
@@ -217,11 +224,13 @@
 
     var tt = 1.2;
     timeline.add([
+      TweenMax.to($('.rsvp-copy'), tt, {autoAlpha: 0}),
       TweenMax.to($('.form-name'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
       TweenMax.to($('.form-email'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
       TweenMax.to($('.form-attending'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
       TweenMax.to($('.form-party'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
       TweenMax.to($('.form-message'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
+      TweenMax.to($('.required-copy'), tt, {x: '+=100px', autoAlpha: 0, ease: Elastic.easeInOut, easeParams:[1.2, 0.7]}),
       TweenMax.to($('.sending-miimii'), 1, {autoAlpha: 1, ease: Expo.easeInOut, delay: 0.35}),
       TweenMax.to($('.btn'), 1, {y: -$('.rsvp-container').height() + $('.sending-miimii').height() - 20, backgroundColor: 'rgba(46, 58, 118, 0)', outline: 'none', ease: Expo.easeInOut, delay: 0.3}),
       TweenMax.to($(window), 1, {scrollTo: {y: $('.section-rsvp').offset().top }, ease: Expo.easeOut, delay: 0.5}),
@@ -253,11 +262,13 @@
         },
         404: function() {
           hideForm(404);
+        },
+        406: function() {
+          hideForm(404);
         }
       }
     });
 
-    // hideForm(200);
   }
 
   function hideForm(statusCode) {
@@ -295,12 +306,15 @@
     } else if(!$('.form-email input').val()) {
       error('.form-email input');
       return false;
+    } else if($('.form-attending-select').val() === 'na') {
+      error('.form-attending-select');
+      return false;
     }
   }
 
   function error(selector) {
     TweenMax.to(window, 0.2, {
-      scrollTo: $(selector).offset().top - 50,
+      scrollTo: $(selector).offset().top - ($(window).width() > 736 ? 50 : 100),
       ease: Expo.easeOut,
       onComplete: function() {
         var timeline = new TimelineMax();
