@@ -31,7 +31,7 @@
     });
 
     $('.left-confetti, .right-confetti').css({
-      'height': $(window).height()
+      'height': $('section-wedding').height()
     });
 
     $('.rsvp-bg-tl, .rsvp-bg-tr').css({
@@ -92,7 +92,7 @@
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.left-confetti', 1, {y: '-20%' }, {y: '40%', ease: Linear.easeNone}))
+    .setTween(TweenMax.fromTo('.left-confetti-container', 1, {y: '-20%' }, {y: '40%', ease: Linear.easeNone}))
     .addTo(controller);
 
     // confetti-right
@@ -101,7 +101,7 @@
       triggerHook: 'onLeave',
       duration: $(document).height()
     })
-    .setTween(TweenMax.fromTo('.right-confetti', 1, {y: '-20%' }, {y: '40%', ease: Linear.easeNone}))
+    .setTween(TweenMax.fromTo('.right-confetti-container', 1, {y: '-20%' }, {y: '40%', ease: Linear.easeNone}))
     .addTo(controller);
 
     // nav-header
@@ -112,6 +112,15 @@
     // })
     // .setPin('.nav-header')
     // .addTo(controller);
+    
+    new ScrollMagic.Scene({
+      triggerHook: 'onEnter',
+      duration: $('.scroll-down').height(),
+    })
+    .on('enter start', function() {
+      TweenMax.to($('.scroll-arrow'), 0.6, {autoAlpha: 0, y: 22});
+    })
+    .addTo(controller);
 
     new Waypoint.Sticky({
       element: $('.nav-header')[0],
@@ -166,6 +175,11 @@
 
   controller.scrollTo(function (newpos) {
     TweenMax.to(window, 1, {scrollTo: {y: newpos}, ease: Expo.easeOut});
+  });
+
+  $(window).load(function () {
+    $('.container').removeClass('unresolved');
+    $('.loading').removeClass('unresolved');
   });
 
   //  bind scroll to anchor links
